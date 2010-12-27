@@ -3,8 +3,8 @@
 
 START=98
 start() {
-	uci set system.@system[0].hostname=InternetRadio
-	uci set system.@system[0].timezone=UTC-1
+	uci set system.@system[0].hostname=OpenWRTradio
+	uci set system.@system[0].timezone=UTC
 	uci commit system
 	uci del wireless.@wifi-device[0].disabled
 	uci set wireless.@wifi-iface[0].network=wan
