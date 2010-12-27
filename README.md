@@ -8,12 +8,12 @@
  ---------------------------------------------------
 
 How to compile:
- - Prepare your compile enviroment - > http://wiki.openwrt.org/doc/howto/build
- - Clone original OpenWRT backfire branch
- - Update package feeds
- - Clone this repository
- - Compile
- - Upload to router (set it to failsafe mode first)
+  -  Prepare your compile enviroment - > http://wiki.openwrt.org/doc/howto/build
+  -  Clone original OpenWRT backfire branch
+  -  Update package feeds
+  -  Clone this repository
+  -  Compile
+  -  Upload to router (set it to failsafe mode first)
 
 Run following:
     mkdir OpenWRTradio && cd OpenWRTradio && svn co svn://svn.openwrt.org/openwrt/trunk/
@@ -23,6 +23,6 @@ Run following:
     atftp --trace --option "timeout 1" --option "mode octet" --put --local-file bin/brcm-2.4/openwrt-brcm-2.4-squashfs.trx 192.168.1.1
 
 Remarks:
- - Edit packages/base-files/files/etc/init.d/radio (set initial radios to load)
- - Edit packages/base-files/files/etc/init.d/first (wlan to connect to and timezone)
- - Edit packages/base-files/files/etc/crontabs/root (Alarm radio clock...)
+  -  Edit packages/base-files/files/etc/init.d/radio (set initial radios to load)
+  -  Edit packages/base-files/files/etc/init.d/first (wlan to connect to and timezone)
+  -  Edit packages/base-files/files/etc/crontabs/root (radio clock, leds)
