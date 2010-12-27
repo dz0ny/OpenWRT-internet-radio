@@ -1,0 +1,14 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2007-2010 OpenWrt.org
+START=93
+
+start() {
+	if [ -x /bin/nice ]; then
+		nice="nice -n -10"
+	fi
+	$nice /usr/bin/mpd
+}
+
+stop() {
+        killall mpd
+}

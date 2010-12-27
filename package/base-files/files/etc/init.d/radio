@@ -1,0 +1,15 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2010 dz0ny
+
+START=99
+start() {
+	mpc volume 90
+	mpc repeat 1
+	mpc add http://192.168.1.102:3333/ra1.mp3 >/dev/null 2>&1
+	mpc add http://www.rtvslo.si/media.php?id=ra.val202&mt=wm&mq=hi&wm=true&rm=false
+	mpc add http://www.rtvslo.si/media.php?id=ra.a1&mt=wm&mq=hi&wm=true&rm=false
+	mpc add http://89.212.204.96:8000/hifi >/dev/null 2>&1
+	mpc add http://real1.ognjisce.si:8000/ognjisce56stereo >/dev/null 2>&1
+	mpc add http://192.168.1.102:3333/ant.mp3 >/dev/null 2>&1
+}
+

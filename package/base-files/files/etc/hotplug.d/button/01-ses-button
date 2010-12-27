@@ -1,0 +1,25 @@
+#!/bin/sh
+logger "$BUTTON and $ACTION"
+if [ "$BUTTON"="ses" ]; then
+   if [ "$ACTION" = "pressed" ]; then
+	if [ -f /tmp/buttonpress ]; then
+		rm /tmp/buttonpress
+	else	
+		touch /tmp/buttonpress
+	fi
+   fi
+   if [ "$ACTION" = "released" ]; then
+	if [ "$(( $(date +"%s") - $(date +"%s" -r /tmp/buttonpress) ))" -gt "3" ]; then
+	   	mpc stop
+	else
+		PLAYING="`echo status | nc 127.0.0.1 6600 | grep -o 'state: play' -c`"
+		if [ "$PLAYING" = "0" ];then
+		  mpc play
+		else
+		  mpc next
+		fi
+	fi
+	rm /tmp/buttonpress	
+   fi
+   echo "status" | nc 127.0.0.1 6600 | grep -o 'state: play' -c > /proc/diag/led/power
+fi

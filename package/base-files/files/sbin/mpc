@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# Copyright (c) 2010
+# dz0ny
+#
+
+if [ -z "$@" ]; then
+ echo "Enter command!"
+else
+  if [ $1 == "volume" ]; then
+   echo "setvol $2" | nc 127.0.0.1 6600
+  else
+   echo "$@" | nc 127.0.0.1 6600
+  fi
+fi

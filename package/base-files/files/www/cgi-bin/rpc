@@ -1,0 +1,4 @@
+#!/bin/sh
+read $QUERY_STRING
+tmp=`uhttpd -d $QUERY_STRING`
+echo `mpc $tmp`

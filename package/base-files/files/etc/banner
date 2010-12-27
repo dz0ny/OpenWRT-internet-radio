@@ -1,0 +1,8 @@
+ ---------------------------------------------------
+   OpenWRT Radio Project v 0.5
+	MPD 0.16 (ACC,WMA,MP3, Shoutcast)
+	One button operation (play, next, stop)
+	Web UI
+	USB Storage (FAT32, NTFS, ext3)
+	UPNP Dlna
+ ---------------------------------------------------

@@ -1,0 +1,6 @@
+29	5	*	*	*	mpc play >/dev/null 2>&1
+0	7	*	*	*	mpc stop >/dev/null 2>&1
+59	12	*	*	*	mpc play >/dev/null 2>&1
+30	13	*	*	*	mpc stop >/dev/null 2>&1
+#*	*	*	*	*	echo status | nc 127.0.0.1 6600 | grep -o 'state: play' -c > /proc/diag/led/power >/dev/null 2>&1
+

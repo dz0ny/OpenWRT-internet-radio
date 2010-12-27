@@ -1,0 +1,16 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2010 dz0ny
+
+START=98
+start() {
+	uci set system.@system[0].hostname=InternetRadio
+	uci set system.@system[0].timezone=UTC-1
+	uci commit system
+	uci del wireless.@wifi-device[0].disabled
+	uci set wireless.@wifi-iface[0].network=wan
+	uci set wireless.@wifi-iface[0].mode=sta
+	uci set wireless.@wifi-iface[0].ssid=dz0ny
+	uci commit wireless
+	wifi &
+	rm /etc/init.d/first
+}
